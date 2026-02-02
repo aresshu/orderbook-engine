@@ -2,14 +2,17 @@ package engine
 
 import "time"
 
-type Side string
+type Side int
 
-type OrderStatus string
+const (
+	Bid Side = iota
+	Ask
+)
 
 type Order struct {
-	Id        string
+	Id        int
 	Side      Side
-	Price     int64
+	Price     float64
 	Quantity  int64
 	Timestamp time.Time
 }
